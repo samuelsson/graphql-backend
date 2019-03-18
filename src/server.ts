@@ -14,8 +14,8 @@ const server = class Server {
 
     // Start the Express server at specified port
     public start() {
-        this.app.listen(this.port);
-        console.log(`Server listening at localhost:${this.port}`);
+        const callback = console.log(`Server listening at localhost:${this.port}`);
+        this.app.listen(this.port, () => callback);
     }
 };
 
