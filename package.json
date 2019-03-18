@@ -2,9 +2,9 @@
   "name": "graphql_backend",
   "version": "0.1.0",
   "description": "A backend built with GraphQL",
-  "main": "src/server.js",
+  "main": "src/index.js",
   "scripts": {
-    "start": "ts-node src/server.ts",
+    "start": "ts-node src/index.ts",
     "dev": "nodemon"
   },
   "author": "@ErikSamuelsson",
