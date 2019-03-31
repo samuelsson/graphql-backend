@@ -1,18 +1,15 @@
 import { buildSchema } from 'graphql';
 import graphqlHTTP from 'express-graphql';
 
+import * as User from './User/user'
+
 // Construct a schema, using graphql schema language
-const schema = buildSchema(`
-  type Query {
-    msg: String
-  }
-`);
+const schema = buildSchema(User.userQuery);
 
 // The root provides a resolver function for each API endpoint
 const root = {
-    msg: () => {
-        return 'Hello world!';
-    },
+    user: User.getUser,
+    users: User.getUsers
 };
 
 const graphql = graphqlHTTP({
