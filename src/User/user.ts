@@ -1,6 +1,6 @@
 import userTestData from './userTestData'
 
-const userQuery = `
+const schema = `
     type Query {
         user(id: Int!): User
         users: [User]
@@ -22,5 +22,9 @@ const getUsers = () => {
     return userTestData;
 };
 
+const endpoints = {
+    user: getUser,
+    users: getUsers
+};
 
-export { userQuery, getUser, getUsers }
+export { schema, endpoints }
