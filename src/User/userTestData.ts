@@ -19,9 +19,33 @@ const usersTestData = [
     },
     {
         id: 4,
-        username: 'Leffe',
+        username: 'leffe',
         firstName: 'Leify',
         lastName: 'Vittulainen'
+    },
+    {
+        id: 5,
+        username: 'anders22',
+        firstName: 'Anders',
+        lastName: 'Andersson'
+    },
+    {
+        id: 6,
+        username: 'batman',
+        firstName: 'Bruce',
+        lastName: 'Wayne'
+    },
+    {
+        id: 7,
+        username: 'the_king',
+        firstName: 'Carl Gustaf',
+        lastName: 'Johansson'
+    },
+    {
+        id: 8,
+        username: 'hej',
+        firstName: 'Hej',
+        lastName: 'Hejsson'
     },
 ];
 
