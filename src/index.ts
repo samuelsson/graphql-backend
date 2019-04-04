@@ -1,11 +1,12 @@
 import cors from 'cors';
 import Server from './server';
 import graphql from './graphql';
+import config from './config';
 
-const server = Server.init(4000);
+const server = Server.init(config.port);
 
 const corsOptions = {
-    origin: ['http://localhost:3000'],
+    origin: config.corsOrigin,
     optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
 };
 
