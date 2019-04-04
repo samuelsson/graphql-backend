@@ -8,7 +8,7 @@ const server = class Server {
     }
 
     // Initialize the Express server
-    static init(port: number) {
+    public static init(port: number) {
         return new Server(port);
     }
 

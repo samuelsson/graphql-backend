@@ -4,7 +4,7 @@ import graphqlHTTP from 'express-graphql';
 import * as User from './User/user'
 
 // Construct a schema, using graphql schema language
-const schemas = [
+const schemas: string[] = [
     User.schema
 ];
 

@@ -1,6 +1,6 @@
 import userTestData from './userTestData'
 
-const schema = `
+const schema: string = `
     type Query {
         user(id: Int!): User
         users: [User]
@@ -13,12 +13,12 @@ const schema = `
     }
 `;
 
-const getUser = (args: any) => {
+const getUser = (args: any): object => {
     const id = args.id;
     return userTestData.filter(user => user.id === id)[0];
 };
 
-const getUsers = () => {
+const getUsers = (): object => {
     return userTestData;
 };
 
