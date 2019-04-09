@@ -1,9 +1,11 @@
 import cors from 'cors';
 import Server from './server';
+import Database from './database';
 import graphql from './graphql';
 import config from './config';
 
-const server = Server.init(config.port);
+const server = new Server(config.port);
+const database = new Database(config.dbHost, config.dbName, config.dbPort);
 
 const corsOptions = {
     origin: config.corsOrigin,
