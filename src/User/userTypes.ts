@@ -1,4 +1,4 @@
-const schema: string = `
+const userTypes = `
     type User {
         id: String
         username: String
@@ -16,4 +16,4 @@ const schema: string = `
     }
 `;
 
-export default schema;
+export default userTypes;

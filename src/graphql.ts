@@ -1,23 +1,14 @@
-import { buildSchema } from 'graphql';
-import graphqlHTTP from 'express-graphql';
+import expressGraphQL from 'express-graphql';
+import { makeExecutableSchema } from "graphql-tools";
 
-import User from './User/user';
+import { userTypes, userResolvers } from './User/user';
 
-// Construct a schema, using graphql schema language
-const schemas: string[] = [
-    User.schema
-];
+// Merge all types into an array and all resolvers into an object. Used for creating a single executable schema.
+const typeDefs = [userTypes];
+const resolvers = Object.assign({}, userResolvers);
 
-// Join all schemas into one, works like this until we've got more
-const schema = buildSchema(schemas.join());
-
-// The root provides a resolver function for each API endpoint
-// Only User atm :)
-const root = Object.assign({}, User.resolvers);
-
-const graphql = graphqlHTTP({
-    schema: schema,
-    rootValue: root,
+const graphql = expressGraphQL({
+    schema: makeExecutableSchema({ typeDefs, resolvers }),
     graphiql: true,
 });
 

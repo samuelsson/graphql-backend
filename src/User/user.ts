@@ -1,4 +1,4 @@
-import schema from './userSchema';
-import resolvers from './userResolvers';
+import userTypes from './userTypes';
+import userResolvers from './userResolvers';
 
-export default { schema, resolvers };
+export { userTypes, userResolvers };

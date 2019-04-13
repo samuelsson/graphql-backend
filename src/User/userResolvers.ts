@@ -13,14 +13,12 @@ const getUser = (args: any): Promise<object> => {
 // Returns all users
 const getUsers = (): Promise<object> => {
     return new Promise((resolve, reject) => {
-        User.find({}, (err, res) => {
-            err ? reject(err) : resolve(res);
-        })
+        User.find({}, (err, res) => err ? reject(err) : resolve(res));
     });
 };
 
 // Creates a new user
-const addUser = (args: any): Promise<object> => {
+const addUser = (parent: any, args: any): Promise<object> => {
     const user = new User({
         username: args.username,
         password: args.password,
@@ -34,7 +32,11 @@ const addUser = (args: any): Promise<object> => {
 };
 
 export default {
-    user: getUser,
-    users: getUsers,
-    addUser: addUser
+    Query: {
+        user: getUser,
+        users: getUsers
+    },
+    Mutation: {
+        addUser: addUser
+    }
 };
