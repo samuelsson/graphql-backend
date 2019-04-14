@@ -1,5 +1,6 @@
 import expressGraphQL from 'express-graphql';
 import { makeExecutableSchema } from "graphql-tools";
+import merge from 'deepmerge';
 
 import { userTypes, userResolvers } from './User/user';
 import { authTypes, authResolvers } from './auth/auth';
@@ -15,10 +16,12 @@ const rootTypes = `
 const typeDefs = [userTypes, authTypes];
 const resolvers = [userResolvers, authResolvers];
 
+// assign operator doesn't deep merge, meaning nested properties (query and mutation in our case) are not merged. Only
+// the last property is kept. "deepmerge" solves this by recursively merging all objects and nested properties.
 const graphql = expressGraphQL({
     schema: makeExecutableSchema({
         typeDefs: [rootTypes, ...typeDefs],
-        resolvers: Object.assign({}, ...resolvers)
+        resolvers: Object.assign({}, merge.all(resolvers))
     }),
     graphiql: true,
 });
