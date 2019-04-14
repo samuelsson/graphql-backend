@@ -6,12 +6,12 @@ const userTypes = `
         lastName: String
     },
 
-    type Query {
+    extend type Query {
         user(id: String!): User
         users: [User]
     },
 
-    type Mutation {
+    extend type Mutation {
         addUser(username: String!, firstName: String!, lastName: String!): User
     }
 `;
