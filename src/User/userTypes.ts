@@ -1,18 +1,32 @@
 const userTypes = `
+    type Address {
+        street: String
+        zipCode: String
+        city: String
+        country: String
+    }
+
+    type ContactInformation {
+        firstName: String!
+        lastName: String!
+        address: Address
+        phone: String
+        email: String
+    }
+
     type User {
-        id: String
-        username: String
-        firstName: String
-        lastName: String
+        id: ID!
+        username: String!
+        contactInformation: ContactInformation!
     },
 
     extend type Query {
-        user(id: String!): User
+        user(id: ID!): User
         users: [User]
     },
 
     extend type Mutation {
-        addUser(username: String!, firstName: String!, lastName: String!): User
+        deleteUser(id: ID!): Boolean
     }
 `;
 

@@ -1,7 +1,33 @@
-const authTypes = `
+const authTypes = `    
+    input AddressInput {
+        street: String
+        zipCode: String
+        city: String
+        country: String
+    }
+    
+    input ContactInformationInput {
+        firstName: String!
+        lastName: String!
+        address: AddressInput
+        phone: String
+        email: String
+    }
+    
+    input RegisterUser {
+        username: String!
+        password: String!
+        contactInformation: ContactInformationInput!
+    }
+    
+    input LoginUser {
+        username: String!
+        password: String!
+    }
+
     extend type Mutation {
-        login(username: String!, password: String!): String
-        register(username: String!, password: String!, firstName: String!, lastName: String!): String
+        login(input: LoginUser!): String
+        register(input: RegisterUser!): String
     }
 `;
 
