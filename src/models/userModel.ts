@@ -36,9 +36,7 @@ const userSchema: Schema = new Schema({
         type: contactInformationSchema,
         required: true
     }
-}, {
-    timestamps: true
-});
+}, { timestamps: true });
 
 const User = model('User', userSchema);
 

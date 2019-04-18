@@ -1,4 +1,4 @@
-import User from '../User/userModel';
+import User from '../models/userModel';
 
 const login = (parent: any, { input }: any) => {
     console.log('login', input);

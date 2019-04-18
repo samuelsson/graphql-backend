@@ -1,5 +1,5 @@
 import { Types } from "mongoose";
-import User from './userModel';
+import User from '../models/userModel';
 
 // Returns a single user found by ID.
 const getUser = async (parent: any, { id }: any) => {
