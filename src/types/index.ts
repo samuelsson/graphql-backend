@@ -1,5 +1,5 @@
-import authTypes from './authTypes';
-import userTypes from './userTypes';
+import authTypes from './auth';
+import userTypes from './user';
 
 const types = [authTypes, userTypes];
 

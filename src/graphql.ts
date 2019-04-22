@@ -19,8 +19,7 @@ const graphql = expressGraphQL({
     schema: makeExecutableSchema({
         typeDefs: [rootTypes, ...types],
         resolvers: Object.assign({}, merge.all(resolvers))
-    }),
-    graphiql: true,
+    })
 });
 
 export default graphql;

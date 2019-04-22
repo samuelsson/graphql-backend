@@ -1,5 +1,5 @@
-import authResolvers from './authResolvers';
-import userResolvers from './userResolvers';
+import authResolvers from './auth';
+import userResolvers from './user';
 
 const resolvers = [authResolvers, userResolvers];
 
