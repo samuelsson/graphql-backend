@@ -1,11 +1,13 @@
-const authTypes = `    
+import { gql } from 'apollo-server';
+
+const authTypes = gql`
     input AddressInput {
         street: String
         zipCode: String
         city: String
         country: String
     }
-    
+
     input ContactInformationInput {
         firstName: String!
         lastName: String!
@@ -13,13 +15,13 @@ const authTypes = `
         phone: String
         email: String
     }
-    
+
     input RegisterUser {
         username: String!
         password: String!
         contactInformation: ContactInformationInput!
     }
-    
+
     input LoginUser {
         username: String!
         password: String!

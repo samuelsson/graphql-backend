@@ -1,4 +1,6 @@
-const userTypes = `
+import { gql } from 'apollo-server';
+
+const userTypes = gql`
     type Address {
         street: String
         zipCode: String
@@ -18,12 +20,12 @@ const userTypes = `
         id: ID!
         username: String!
         contactInformation: ContactInformation!
-    },
+    }
 
     extend type Query {
         user(id: ID!): User
         users: [User]
-    },
+    }
 
     extend type Mutation {
         deleteUser(id: ID!): Boolean
