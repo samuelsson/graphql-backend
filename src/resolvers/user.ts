@@ -1,13 +1,14 @@
 import { Types } from "mongoose";
-import User from '../models/userModel';
+import User from '../models/user.model';
+import { IUser } from '../models/user.interface';
 
 // Returns a single user found by ID.
-const getUser = async (parent: any, { id }: any) => {
+const getUser = async (parent: any, { id }: any): Promise<IUser> => {
     return await User.findOne({ _id: Types.ObjectId(id) }).exec();
 };
 
 // Returns all users
-const getUsers = async () => {
+const getUsers = async (): Promise<IUser[]> => {
     return await User.find({}).exec();
 };
 

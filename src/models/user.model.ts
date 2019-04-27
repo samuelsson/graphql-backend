@@ -1,4 +1,5 @@
 import { Schema, model } from 'mongoose';
+import { IUser } from './user.interface';
 
 const addressSchema = new Schema({
     street: String,
@@ -38,6 +39,6 @@ const userSchema: Schema = new Schema({
     }
 }, { timestamps: true });
 
-const User = model('User', userSchema);
+const User = model<IUser>('User', userSchema);
 
 export default User;

@@ -27,9 +27,14 @@ const authTypes = gql`
         password: String!
     }
 
+    type AuthUserResponse {
+        user: User
+        token: String
+    }
+
     extend type Mutation {
-        login(input: LoginUser!): String
-        register(input: RegisterUser!): String
+        login(input: LoginUser!): AuthUserResponse
+        register(input: RegisterUser!): AuthUserResponse
     }
 `;
 
