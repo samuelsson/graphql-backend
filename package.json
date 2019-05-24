@@ -14,19 +14,22 @@
   "author": "@ErikSamuelsson",
   "license": "ISC",
   "dependencies": {
-    "apollo-server": "^2.4.8",
+    "apollo-server": "^2.5.0",
     "bcrypt": "^3.0.6",
     "deepmerge": "^3.2.0",
     "dotenv": "^8.0.0",
-    "graphql": "^14.2.1",
+    "graphql": "^14.3.1",
     "jsonwebtoken": "^8.5.1",
-    "mongoose": "^5.5.4"
+    "mongoose": "^5.5.11"
   },
   "devDependencies": {
+    "@commitlint/cli": "^7.6.1",
+    "@commitlint/config-conventional": "^7.6.0",
     "@types/bcrypt": "^3.0.0",
     "@types/dotenv": "^6.1.1",
     "@types/jsonwebtoken": "^8.3.2",
-    "@types/mongoose": "^5.3.27",
+    "@types/mongoose": "^5.5.1",
+    "husky": "^2.3.0",
     "nodemon": "^1.18.11",
     "ts-node": "^8.1.0",
     "tslint": "^5.16.0",

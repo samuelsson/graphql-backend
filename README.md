@@ -34,3 +34,10 @@ To start the application in development mode with hot module reloading you run
 ```
 npm run dev
 ```
+
+## Contributing
+
+Due to having commit linting it can be difficult to know how to write commit messages the first times. Instead of typing
+`commit` in the terminal we can use _commitizen_ instead. 
+
+Just type `npx git-cz` in the terminal and an interactive guide will help you. Super simple 🤩
