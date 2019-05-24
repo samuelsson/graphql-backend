@@ -9,5 +9,5 @@ export default {
     dbHost: process.env.DB_HOST,
     dbPort: Number(process.env.DB_PORT) || 27017,
     jwtSecret: process.env.JWT_SECRET,
-    jwtExpireTime: process.env.JWT_EXPIRE_TIME
+    jwtExpireTime: process.env.JWT_EXPIRE_TIME,
 };

@@ -1,10 +1,10 @@
-import { hashPassword, generateJwtToken, validatePassword } from '../utils/authHelper';
-import User from '../models/user.model';
 import { IUser } from '../models/user.interface';
+import User from '../models/user.model';
+import { generateJwtToken, hashPassword, validatePassword } from '../utils/authHelper';
 
 interface IAuthResponse {
-    user: IUser,
-    token: string,
+    user: IUser;
+    token: string;
 }
 
 const login = async (parent: any, {input}: any): Promise<IAuthResponse> => {
@@ -18,7 +18,7 @@ const login = async (parent: any, {input}: any): Promise<IAuthResponse> => {
 
     const token = generateJwtToken(user);
 
-    return {user, token}
+    return { user, token };
 };
 
 const register = async (parent: any, { input }: any): Promise<IAuthResponse> => {
@@ -32,7 +32,7 @@ const register = async (parent: any, { input }: any): Promise<IAuthResponse> => 
 
 export default {
     Mutation: {
-        login: login,
-        register: register
-    }
+        login,
+        register,
+    },
 };

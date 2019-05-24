@@ -1,25 +1,25 @@
-import { Schema, model } from 'mongoose';
+import { model, Schema } from 'mongoose';
 import { IUser } from './user.interface';
 
 const addressSchema = new Schema({
     street: String,
     zipCode: Number,
     city: String ,
-    country: String
+    country: String,
 }, { _id : false });
 
 const contactInformationSchema = new Schema({
     firstName: {
         type: String,
-        required: true
+        required: true,
     },
     lastName: {
         type: String,
-        required: true
+        required: true,
     },
     phone: String,
     email: String,
-    address: addressSchema
+    address: addressSchema,
 }, { _id : false });
 
 const userSchema: Schema = new Schema({
@@ -27,16 +27,16 @@ const userSchema: Schema = new Schema({
         type: String,
         unique: true,
         required: true,
-        trim: true
+        trim: true,
     },
     password: {
         type: String,
-        required: true
+        required: true,
     },
     contactInformation: {
         type: contactInformationSchema,
-        required: true
-    }
+        required: true,
+    },
 }, { timestamps: true });
 
 const User = model<IUser>('User', userSchema);

@@ -1,8 +1,8 @@
 import bcrypt from 'bcrypt';
 import jsonwebtoken from 'jsonwebtoken';
 import config from '../config';
-import User from '../models/user.model';
 import { IUser } from '../models/user.interface';
+import User from '../models/user.model';
 
 export const hashPassword = async (password: string): Promise<string> => {
     const saltRounds = 10;
@@ -17,7 +17,7 @@ export const generateJwtToken = (user: any): string => {
     return jsonwebtoken.sign(
         { id: user.id },
         config.jwtSecret,
-        { expiresIn: config.jwtExpireTime }
+        { expiresIn: config.jwtExpireTime },
     );
 };
 

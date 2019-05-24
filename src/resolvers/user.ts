@@ -1,6 +1,6 @@
-import { Types } from "mongoose";
-import User from '../models/user.model';
+import { Types } from 'mongoose';
 import { IUser } from '../models/user.interface';
+import User from '../models/user.model';
 import { authenticated } from '../utils/authGuards';
 
 // Returns a single user found by ID.
@@ -20,11 +20,11 @@ const deleteUser = async (parent: any, { id }: any): Promise<boolean> => {
 };
 
 export default {
+    Mutation: {
+        deleteUser,
+    },
     Query: {
         user: getUser,
-        users: authenticated(getUsers)
+        users: authenticated(getUsers),
     },
-    Mutation: {
-        deleteUser: deleteUser
-    }
 };
