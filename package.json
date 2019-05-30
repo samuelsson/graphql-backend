@@ -14,7 +14,7 @@
   "author": "@ErikSamuelsson",
   "license": "ISC",
   "dependencies": {
-    "apollo-server": "^2.5.0",
+    "apollo-server": "^2.5.1",
     "bcrypt": "^3.0.6",
     "deepmerge": "^3.2.0",
     "dotenv": "^8.0.0",
@@ -28,11 +28,15 @@
     "@types/bcrypt": "^3.0.0",
     "@types/dotenv": "^6.1.1",
     "@types/jsonwebtoken": "^8.3.2",
-    "@types/mongoose": "^5.5.1",
+    "@types/mongoose": "^5.5.3",
+    "@typescript-eslint/eslint-plugin": "^1.9.0",
+    "@typescript-eslint/parser": "^1.9.0",
+    "eslint": "^5.16.0",
+    "eslint-config-prettier": "^4.3.0",
     "husky": "^2.3.0",
-    "nodemon": "^1.18.11",
-    "ts-node": "^8.1.0",
-    "tslint": "^5.16.0",
-    "typescript": "^3.4.4"
+    "nodemon": "^1.19.1",
+    "prettier": "^1.17.1",
+    "ts-node": "^8.2.0",
+    "typescript": "^3.5.1"
   }
 }

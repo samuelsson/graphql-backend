@@ -1,7 +1,22 @@
-export const authenticated = (next: any) => (root: any, args: any, context: any, info: any) => {
-    if (!context.currentUser) {
-        throw new Error('Not authenticated!');
-    }
+import { Context } from '../server';
+import { User } from '../models/user.interface';
 
-    return next(root, args, context, info);
+type NextFunction = (
+  root: object,
+  args: object,
+  context: Context,
+  info: object,
+) => Promise<User[]>;
+
+export const authenticated = (next: NextFunction): NextFunction => (
+  root: object,
+  args: object,
+  context: Context,
+  info: object,
+): Promise<User[]> => {
+  if (!context.currentUser) {
+    throw new Error('Not authenticated!');
+  }
+
+  return next(root, args, context, info);
 };

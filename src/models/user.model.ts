@@ -1,44 +1,53 @@
 import { model, Schema } from 'mongoose';
-import { IUser } from './user.interface';
+import { User } from './user.interface';
 
-const addressSchema = new Schema({
+const addressSchema = new Schema(
+  {
     street: String,
     zipCode: Number,
-    city: String ,
+    city: String,
     country: String,
-}, { _id : false });
+  },
+  { _id: false },
+);
 
-const contactInformationSchema = new Schema({
+const contactInformationSchema = new Schema(
+  {
     firstName: {
-        type: String,
-        required: true,
+      type: String,
+      required: true,
     },
     lastName: {
-        type: String,
-        required: true,
+      type: String,
+      required: true,
     },
     phone: String,
     email: String,
     address: addressSchema,
-}, { _id : false });
+  },
+  { _id: false },
+);
 
-const userSchema: Schema = new Schema({
+const userSchema: Schema = new Schema(
+  {
     username: {
-        type: String,
-        unique: true,
-        required: true,
-        trim: true,
+      type: String,
+      unique: true,
+      required: true,
+      trim: true,
     },
     password: {
-        type: String,
-        required: true,
+      type: String,
+      required: true,
     },
     contactInformation: {
-        type: contactInformationSchema,
-        required: true,
+      type: contactInformationSchema,
+      required: true,
     },
-}, { timestamps: true });
+  },
+  { timestamps: true },
+);
 
-const User = model<IUser>('User', userSchema);
+const UserModel = model<User>('User', userSchema);
 
-export default User;
+export default UserModel;
